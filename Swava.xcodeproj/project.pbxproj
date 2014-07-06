@@ -10,6 +10,9 @@
 		57F7A3B91967B71600AC3F8D /* Swava.h in Headers */ = {isa = PBXBuildFile; fileRef = 57F7A3B81967B71600AC3F8D /* Swava.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		57F7A3BF1967B71600AC3F8D /* Swava.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F7A3B31967B71600AC3F8D /* Swava.framework */; };
 		57F7A3C61967B71600AC3F8D /* SwavaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F7A3C51967B71600AC3F8D /* SwavaTests.swift */; };
+		57F7A3D01967B77B00AC3F8D /* Multiset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F7A3CF1967B77B00AC3F8D /* Multiset.swift */; };
+		57F7A3D11967B77B00AC3F8D /* Multiset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F7A3CF1967B77B00AC3F8D /* Multiset.swift */; };
+		57F7A3D31967B7F300AC3F8D /* MultisetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F7A3D21967B7F300AC3F8D /* MultisetTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,8 @@
 		57F7A3BE1967B71600AC3F8D /* SwavaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwavaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F7A3C41967B71600AC3F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57F7A3C51967B71600AC3F8D /* SwavaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwavaTests.swift; sourceTree = "<group>"; };
+		57F7A3CF1967B77B00AC3F8D /* Multiset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Multiset.swift; sourceTree = "<group>"; };
+		57F7A3D21967B7F300AC3F8D /* MultisetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultisetTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +78,7 @@
 			children = (
 				57F7A3B81967B71600AC3F8D /* Swava.h */,
 				57F7A3B61967B71600AC3F8D /* Supporting Files */,
+				57F7A3CF1967B77B00AC3F8D /* Multiset.swift */,
 			);
 			path = Swava;
 			sourceTree = "<group>";
@@ -88,6 +94,7 @@
 		57F7A3C21967B71600AC3F8D /* SwavaTests */ = {
 			isa = PBXGroup;
 			children = (
+				57F7A3D21967B7F300AC3F8D /* MultisetTests.swift */,
 				57F7A3C51967B71600AC3F8D /* SwavaTests.swift */,
 				57F7A3C31967B71600AC3F8D /* Supporting Files */,
 			);
@@ -210,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F7A3D01967B77B00AC3F8D /* Multiset.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F7A3D11967B77B00AC3F8D /* Multiset.swift in Sources */,
 				57F7A3C61967B71600AC3F8D /* SwavaTests.swift in Sources */,
+				57F7A3D31967B7F300AC3F8D /* MultisetTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +326,7 @@
 		57F7A3CA1967B71600AC3F8D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -327,12 +338,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		57F7A3CB1967B71600AC3F8D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
