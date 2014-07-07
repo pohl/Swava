@@ -13,7 +13,7 @@ class MultisetTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // setup code here. called prior to each test
     }
     
     override func tearDown() {
@@ -30,6 +30,25 @@ class MultisetTests: XCTestCase {
         XCTAssert(setUnderTest[2] == 1, "one 2 expected")
         XCTAssert(setUnderTest[3] == nil, "zero 3s expected")
     }
+    
+    func testEquality() {
+        var a = Multiset<Int>()
+        var b = Multiset<Int>()
+        XCTAssert(a == b, "a and be are both empty")
+        a.add(1)
+        XCTAssert(a != b, "expected inequality")
+        a.add(2)
+        XCTAssert(a != b, "expected inequality")
+        a.add(1)
+        XCTAssert(a != b, "expected inequality")
+        b.add(1)
+        XCTAssert(a != b, "expected inequality")
+        b.add(2)
+        XCTAssert(a != b, "expected inequality")
+        b.add(1)
+        XCTAssert(a == b, "expected equality")
+    }
+
     
     
 }

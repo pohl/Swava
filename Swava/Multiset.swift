@@ -1,7 +1,7 @@
 //  Copyright (c) 2014 pohl. All rights reserved.
 
 
-struct Multiset<T: Hashable>: Sequence {
+struct Multiset<T: Hashable>: Sequence, Equatable {
     
     var dictionary = Dictionary<T,Int>()
     
@@ -31,6 +31,8 @@ struct Multiset<T: Hashable>: Sequence {
         }
     }
     
-    
 }
 
+func == <T: Hashable> (lhs: Multiset<T>, rhs: Multiset<T>) -> Bool {
+    return lhs.dictionary == rhs.dictionary
+}
