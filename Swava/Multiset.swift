@@ -1,9 +1,9 @@
-//  Copyright (c) 2014 pohl. All rights reserved.
+//  Copyright (c) 2014 Pohl Longsine. All rights reserved.
 
 
 struct Multiset<T: Hashable>: Sequence, Equatable {
     
-    var dictionary = Dictionary<T,Int>()
+    var dictionary: Dictionary<T,Int> = [:]
     
     mutating func add(item: T) -> () {
         if let currentCount = dictionary[item] {
