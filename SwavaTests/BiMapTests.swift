@@ -38,12 +38,12 @@ class BiMapTests: XCTestCase {
         XCTAssert(b["E"] == ".", "dit expected")
         XCTAssert(b["F"] == "..-.", "dit dit dah dit expected")
         
-        XCTAssert(b.key(".") == "E", "E expected")
-        XCTAssert(b.key("-...") == "B", "B expected")
-        XCTAssert(b.key("-.-.") == "C", "C expected")
-        XCTAssert(b.key("-..") == "D", "D expected")
-        XCTAssert(b.key(".") == "E", "E expected")
-        XCTAssert(b.key("..-.") == "F", "F expected")
+        XCTAssert(b.keyFor(".") == "E", "E expected")
+        XCTAssert(b.keyFor("-...") == "B", "B expected")
+        XCTAssert(b.keyFor("-.-.") == "C", "C expected")
+        XCTAssert(b.keyFor("-..") == "D", "D expected")
+        XCTAssert(b.keyFor(".") == "E", "E expected")
+        XCTAssert(b.keyFor("..-.") == "F", "F expected")
     }
     
     

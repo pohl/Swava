@@ -26,8 +26,8 @@ struct BiMap<K: Hashable, V: Hashable> {
         }
     }
     
-    func key(forValue: V) -> K? {
-        return inverse[forValue]
+    func keyFor(value: V) -> K? {
+        return inverse[value]
     }
     
 }
