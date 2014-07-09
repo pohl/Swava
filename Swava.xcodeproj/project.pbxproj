@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		57B5397F196B82D600B1C134 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 57B5397E196B82D600B1C134 /* README.md */; };
 		57B53981196B82E400B1C134 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 57B53980196B82E400B1C134 /* LICENSE */; };
+		57B53983196CCE3100B1C134 /* BiMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B53982196CCE3100B1C134 /* BiMapTests.swift */; };
 		57D364D0196A277600ABB738 /* BiMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D364CF196A277600ABB738 /* BiMap.swift */; };
 		57D364D1196A277600ABB738 /* BiMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D364CF196A277600ABB738 /* BiMap.swift */; };
 		57F7A3B91967B71600AC3F8D /* Swava.h in Headers */ = {isa = PBXBuildFile; fileRef = 57F7A3B81967B71600AC3F8D /* Swava.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		57F7A3BF1967B71600AC3F8D /* Swava.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F7A3B31967B71600AC3F8D /* Swava.framework */; };
-		57F7A3C61967B71600AC3F8D /* SwavaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F7A3C51967B71600AC3F8D /* SwavaTests.swift */; };
 		57F7A3D01967B77B00AC3F8D /* Multiset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F7A3CF1967B77B00AC3F8D /* Multiset.swift */; };
 		57F7A3D11967B77B00AC3F8D /* Multiset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F7A3CF1967B77B00AC3F8D /* Multiset.swift */; };
 		57F7A3D31967B7F300AC3F8D /* MultisetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F7A3D21967B7F300AC3F8D /* MultisetTests.swift */; };
@@ -32,13 +32,13 @@
 /* Begin PBXFileReference section */
 		57B5397E196B82D600B1C134 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		57B53980196B82E400B1C134 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		57B53982196CCE3100B1C134 /* BiMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiMapTests.swift; sourceTree = "<group>"; };
 		57D364CF196A277600ABB738 /* BiMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiMap.swift; sourceTree = "<group>"; };
 		57F7A3B31967B71600AC3F8D /* Swava.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swava.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F7A3B71967B71600AC3F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57F7A3B81967B71600AC3F8D /* Swava.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swava.h; sourceTree = "<group>"; };
 		57F7A3BE1967B71600AC3F8D /* SwavaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwavaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F7A3C41967B71600AC3F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		57F7A3C51967B71600AC3F8D /* SwavaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwavaTests.swift; sourceTree = "<group>"; };
 		57F7A3CF1967B77B00AC3F8D /* Multiset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Multiset.swift; sourceTree = "<group>"; };
 		57F7A3D21967B7F300AC3F8D /* MultisetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultisetTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,8 +104,8 @@
 		57F7A3C21967B71600AC3F8D /* SwavaTests */ = {
 			isa = PBXGroup;
 			children = (
+				57B53982196CCE3100B1C134 /* BiMapTests.swift */,
 				57F7A3D21967B7F300AC3F8D /* MultisetTests.swift */,
-				57F7A3C51967B71600AC3F8D /* SwavaTests.swift */,
 				57F7A3C31967B71600AC3F8D /* Supporting Files */,
 			);
 			path = SwavaTests;
@@ -239,7 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57F7A3D11967B77B00AC3F8D /* Multiset.swift in Sources */,
-				57F7A3C61967B71600AC3F8D /* SwavaTests.swift in Sources */,
+				57B53983196CCE3100B1C134 /* BiMapTests.swift in Sources */,
 				57F7A3D31967B7F300AC3F8D /* MultisetTests.swift in Sources */,
 				57D364D1196A277600ABB738 /* BiMap.swift in Sources */,
 			);

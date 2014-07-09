@@ -6,13 +6,28 @@ struct BiMap<K: Hashable, V: Hashable> {
     var inverse: Dictionary<V,K> = [:]
 
     mutating func put(key: K, value: V) -> V? {
-        let result = dictionary[key]
+        let result = removeValueForKey(key)
         dictionary[key] = value
         inverse[value] = key
-        // TODO: suppose the key and/or value already existed in the maps
         return result
     }
     
-    // TODO: make DictionaryLiteralConvertible
+    mutating func removeValueForKey(key: K) -> V? {
+        let result = dictionary.removeValueForKey(key)
+        if let value = result {
+            inverse.removeValueForKey(value)
+        }
+        return result
+    }
+   
+    subscript (i: K) -> V? {
+        get {
+            return dictionary[i]
+        }
+    }
+    
+    func key(forValue: V) -> K? {
+        return inverse[forValue]
+    }
     
 }
