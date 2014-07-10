@@ -6,10 +6,11 @@ struct BiMap<K: Hashable, V: Hashable> {
     var inverse: Dictionary<V,K> = [:]
 
     mutating func put(key: K, value: V) -> V? {
-        let result = removeValueForKey(key)
+        let oldValueForKey = removeValueForKey(key)
+        let oldKeyForvalue = removeKeyForValue(value)
         dictionary[key] = value
         inverse[value] = key
-        return result
+        return oldValueForKey
     }
     
     mutating func removeValueForKey(key: K) -> V? {
@@ -20,6 +21,14 @@ struct BiMap<K: Hashable, V: Hashable> {
         return result
     }
    
+    mutating func removeKeyForValue(value: V) -> K? {
+        let result = inverse.removeValueForKey(value)
+        if let key = result {
+            dictionary.removeValueForKey(key)
+        }
+        return result
+    }
+    
     subscript (i: K) -> V? {
         get {
             return dictionary[i]

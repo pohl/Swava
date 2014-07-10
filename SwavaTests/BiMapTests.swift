@@ -38,13 +38,29 @@ class BiMapTests: XCTestCase {
         XCTAssert(b["E"] == ".", "dit expected")
         XCTAssert(b["F"] == "..-.", "dit dit dah dit expected")
         
-        XCTAssert(b.keyFor(".") == "E", "E expected")
+        XCTAssert(b.keyFor(".-") == "A", "A expected")
         XCTAssert(b.keyFor("-...") == "B", "B expected")
         XCTAssert(b.keyFor("-.-.") == "C", "C expected")
         XCTAssert(b.keyFor("-..") == "D", "D expected")
         XCTAssert(b.keyFor(".") == "E", "E expected")
         XCTAssert(b.keyFor("..-.") == "F", "F expected")
     }
-    
+
+    func testReplacingExistingValues() {
+        var b = BiMap<String,Int>()
+        b.put("A", value: 1)
+        b.put("B", value: 2)
+        XCTAssert(b["A"] == 1, "1 expected")
+        XCTAssert(b["B"] == 2, "2 expected")
+        XCTAssert(b.keyFor(1) == "A", "A expected")
+        XCTAssert(b.keyFor(2) == "B", "B expected")
+
+        b.put("A", value: 2)
+        XCTAssert(b["A"] == 2, "2 expected after change")
+        XCTAssert(b.keyFor(2) == "A", "A expected after change")
+        XCTAssert(b["B"] == nil, "nil expected after change")
+        XCTAssert(b.keyFor(1) == nil, "nil expected after change")
+    }
+
     
 }
