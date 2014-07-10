@@ -1,7 +1,7 @@
 //  Copyright (c) 2014 Pohl Longsine. All rights reserved.
 
 
-struct BiMap<K: Hashable, V: Hashable> {
+struct BiMap<K: Hashable, V: Hashable>: Sequence {
     var dictionary: Dictionary<K,V> = [:]
     var inverse: Dictionary<V,K> = [:]
 
@@ -38,5 +38,10 @@ struct BiMap<K: Hashable, V: Hashable> {
     func keyFor(value: V) -> K? {
         return inverse[value]
     }
+    
+    func generate() -> DictionaryGenerator<K,V> {
+        return dictionary.generate()
+    }
+
     
 }
