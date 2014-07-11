@@ -61,6 +61,29 @@ class BiMapTests: XCTestCase {
         XCTAssert(b["B"] == nil, "nil expected after change")
         XCTAssert(b.keyFor(1) == nil, "nil expected after change")
     }
+    
+    func testEquality() {
+        var a = BiMap<Int,String>()
+        var b = BiMap<Int,String>()
+        XCTAssert(a == b, "a and be are both empty")
+        a.put(1, value: "foo")
+        XCTAssert(a != b, "expected inequality")
+        a.put(2, value: "bar")
+        XCTAssert(a != b, "expected inequality")
+        b.put(2, value: "bar");
+        XCTAssert(a != b, "expected inequality")
+        b.put(1, value: "foo")
+        XCTAssert(a == b, "expected equality")
+        b.put(2, value: "foo");
+        XCTAssert(a != b, "expected inequality")
+        a.removeKeyForValue("bar");
+        XCTAssert(a != b, "expected inequality")
+        a.removeValueForKey(1)
+        XCTAssert(a != b, "expected inequality")
+        a.put(2, value: "foo");
+        XCTAssert(a == b, "expected equality")
+    }
+
 
     
 }

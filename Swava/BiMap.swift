@@ -1,7 +1,7 @@
 //  Copyright (c) 2014 Pohl Longsine. All rights reserved.
 
 
-struct BiMap<K: Hashable, V: Hashable>: Sequence {
+struct BiMap<K: Hashable, V: Hashable>: Sequence, Equatable  {
     var dictionary: Dictionary<K,V> = [:]
     var inverse: Dictionary<V,K> = [:]
 
@@ -44,4 +44,8 @@ struct BiMap<K: Hashable, V: Hashable>: Sequence {
     }
 
     
+}
+
+func == <K: Hashable,V: Hashable> (lhs: BiMap<K,V>, rhs: BiMap<K,V>) -> Bool {
+    return lhs.dictionary == rhs.dictionary
 }

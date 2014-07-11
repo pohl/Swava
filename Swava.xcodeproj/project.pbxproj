@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		57B5397F196B82D600B1C134 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 57B5397E196B82D600B1C134 /* README.md */; };
+		57AACF69197016D100C457CA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 57B5397E196B82D600B1C134 /* README.md */; };
 		57B53981196B82E400B1C134 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 57B53980196B82E400B1C134 /* LICENSE */; };
 		57B53983196CCE3100B1C134 /* BiMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B53982196CCE3100B1C134 /* BiMapTests.swift */; };
 		57D364D0196A277600ABB738 /* BiMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D364CF196A277600ABB738 /* BiMap.swift */; };
@@ -211,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57B53981196B82E400B1C134 /* LICENSE in Resources */,
+				57AACF69197016D100C457CA /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +229,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57B5397F196B82D600B1C134 /* README.md in Sources */,
 				57F7A3D01967B77B00AC3F8D /* Multiset.swift in Sources */,
 				57D364D0196A277600ABB738 /* BiMap.swift in Sources */,
 			);
