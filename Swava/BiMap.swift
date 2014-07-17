@@ -2,9 +2,20 @@
 
 
 struct BiMap<K: Hashable, V: Hashable>: Sequence, Equatable  {
-    var dictionary: Dictionary<K,V> = [:]
-    var inverse: Dictionary<V,K> = [:]
+    var dictionary: [K:V]
+    var inverse: [V:K]
 
+    init() {
+        dictionary = [:]
+        inverse = [:]
+    }
+    
+    // waiting for visibility modifiers to keep this private
+    init(otherDictionary: [V:K], otherInverse: [K:V]) {
+        dictionary = otherInverse
+        inverse = otherDictionary
+    }
+    
     mutating func put(key: K, value: V) -> V? {
         let oldValueForKey = removeValueForKey(key)
         let oldKeyForvalue = removeKeyForValue(value)
@@ -29,6 +40,7 @@ struct BiMap<K: Hashable, V: Hashable>: Sequence, Equatable  {
         return result
     }
     
+    
     subscript (i: K) -> V? {
         get {
             return dictionary[i]
@@ -42,6 +54,12 @@ struct BiMap<K: Hashable, V: Hashable>: Sequence, Equatable  {
     func generate() -> DictionaryGenerator<K,V> {
         return dictionary.generate()
     }
+    
+    /*
+    func flip() -> BiMap<V,K> {
+        return BiMap(self.dictionary,self.inverse)
+    }
+    */
 
     
 }
