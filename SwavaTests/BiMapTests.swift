@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Swava
 
 class BiMapTests: XCTestCase {
     
@@ -46,6 +45,28 @@ class BiMapTests: XCTestCase {
         XCTAssert(b.keyFor("..-.") == "F", "F expected")
     }
 
+    func testInverse() {
+        var b = BiMap<String,String>()
+        
+        b.put("A", value: ".-")
+        b.put("B", value: "-...")
+        b.put("C", value: "-.-.")
+        b.put("D", value: "-..")
+        b.put("E", value: ".")
+        b.put("F", value: "..-.")
+        
+        let inverse = b.inverse()
+        
+        XCTAssert(inverse[".-"] == "A", "A expected")
+        XCTAssert(inverse["-..."] == "B", "B expected")
+        XCTAssert(inverse["-.-."] == "C", "C expected")
+        XCTAssert(inverse["-.."] == "D", "D expected")
+        XCTAssert(inverse["."] == "E", "E expected")
+        XCTAssert(inverse["..-."] == "F", "F expected")
+    }
+    
+
+    
     func testReplacingExistingValues() {
         var b = BiMap<String,Int>()
         b.put("A", value: 1)

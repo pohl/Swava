@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5760885719789ED2007EB45D /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760885619789ED2007EB45D /* Pair.swift */; };
 		57AACF69197016D100C457CA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 57B5397E196B82D600B1C134 /* README.md */; };
 		57B53981196B82E400B1C134 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 57B53980196B82E400B1C134 /* LICENSE */; };
 		57B53983196CCE3100B1C134 /* BiMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B53982196CCE3100B1C134 /* BiMapTests.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5760885619789ED2007EB45D /* Pair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
 		57B5397E196B82D600B1C134 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		57B53980196B82E400B1C134 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		57B53982196CCE3100B1C134 /* BiMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiMapTests.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				57F7A3B61967B71600AC3F8D /* Supporting Files */,
 				57F7A3CF1967B77B00AC3F8D /* Multiset.swift */,
 				57D364CF196A277600ABB738 /* BiMap.swift */,
+				5760885619789ED2007EB45D /* Pair.swift */,
 			);
 			path = Swava;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			files = (
 				57F7A3D01967B77B00AC3F8D /* Multiset.swift in Sources */,
 				57D364D0196A277600ABB738 /* BiMap.swift in Sources */,
+				5760885719789ED2007EB45D /* Pair.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

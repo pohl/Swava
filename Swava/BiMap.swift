@@ -2,40 +2,40 @@
 
 
 struct BiMap<K: Hashable, V: Hashable>: Sequence, Equatable  {
-    var dictionary: [K:V]
-    var inverse: [V:K]
+    var forwardMap: [K:V]
+    var reverseMap: [V:K]
 
     init() {
-        dictionary = [:]
-        inverse = [:]
+        forwardMap = [:]
+        reverseMap = [:]
     }
     
     // waiting for visibility modifiers to keep this private
-    init(otherDictionary: [V:K], otherInverse: [K:V]) {
-        dictionary = otherInverse
-        inverse = otherDictionary
+    init(forward: [V:K], reverse: [K:V]) {
+        forwardMap = reverse
+        reverseMap = forward
     }
     
     mutating func put(key: K, value: V) -> V? {
         let oldValueForKey = removeValueForKey(key)
         let oldKeyForvalue = removeKeyForValue(value)
-        dictionary[key] = value
-        inverse[value] = key
+        forwardMap[key] = value
+        reverseMap[value] = key
         return oldValueForKey
     }
     
     mutating func removeValueForKey(key: K) -> V? {
-        let result = dictionary.removeValueForKey(key)
+        let result = forwardMap.removeValueForKey(key)
         if let value = result {
-            inverse.removeValueForKey(value)
+            reverseMap.removeValueForKey(value)
         }
         return result
     }
    
     mutating func removeKeyForValue(value: V) -> K? {
-        let result = inverse.removeValueForKey(value)
+        let result = reverseMap.removeValueForKey(value)
         if let key = result {
-            dictionary.removeValueForKey(key)
+            forwardMap.removeValueForKey(key)
         }
         return result
     }
@@ -43,27 +43,27 @@ struct BiMap<K: Hashable, V: Hashable>: Sequence, Equatable  {
     
     subscript (i: K) -> V? {
         get {
-            return dictionary[i]
+            return forwardMap[i]
         }
     }
     
     func keyFor(value: V) -> K? {
-        return inverse[value]
+        return reverseMap[value]
     }
     
     func generate() -> DictionaryGenerator<K,V> {
-        return dictionary.generate()
+        return forwardMap.generate()
     }
     
-    /*
-    func flip() -> BiMap<V,K> {
-        return BiMap(self.dictionary,self.inverse)
+
+    func inverse() -> BiMap<V,K> {
+        return BiMap<V,K>(forward: self.forwardMap, reverse: self.reverseMap)
     }
-    */
+
 
     
 }
 
 func == <K: Hashable,V: Hashable> (lhs: BiMap<K,V>, rhs: BiMap<K,V>) -> Bool {
-    return lhs.dictionary == rhs.dictionary
+    return lhs.forwardMap == rhs.forwardMap
 }
