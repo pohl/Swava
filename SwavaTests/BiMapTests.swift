@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Swava
 
 class BiMapTests: XCTestCase {
     
