@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Swava
 
 class MultisetTests: XCTestCase {
     

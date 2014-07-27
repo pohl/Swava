@@ -1,22 +1,22 @@
 //  Copyright (c) 2014 Pohl Longsine. All rights reserved.
 
 
-struct BiMap<K: Hashable, V: Hashable>: Sequence, Equatable  {
-    var forwardMap: [K:V]
-    var reverseMap: [V:K]
+public struct BiMap<K: Hashable, V: Hashable>: Sequence, Equatable  {
+    private var forwardMap: [K:V]
+    private var reverseMap: [V:K]
 
-    init() {
+    public init() {
         forwardMap = [:]
         reverseMap = [:]
     }
     
     // waiting for visibility modifiers to keep this private
-    init(forward: [V:K], reverse: [K:V]) {
+    private init(forward: [V:K], reverse: [K:V]) {
         forwardMap = reverse
         reverseMap = forward
     }
     
-    mutating func put(key: K, value: V) -> V? {
+    public mutating func put(key: K, value: V) -> V? {
         let oldValueForKey = removeValueForKey(key)
         let oldKeyForvalue = removeKeyForValue(value)
         forwardMap[key] = value
@@ -24,7 +24,7 @@ struct BiMap<K: Hashable, V: Hashable>: Sequence, Equatable  {
         return oldValueForKey
     }
     
-    mutating func removeValueForKey(key: K) -> V? {
+    public mutating func removeValueForKey(key: K) -> V? {
         let result = forwardMap.removeValueForKey(key)
         if let value = result {
             reverseMap.removeValueForKey(value)
@@ -32,7 +32,7 @@ struct BiMap<K: Hashable, V: Hashable>: Sequence, Equatable  {
         return result
     }
    
-    mutating func removeKeyForValue(value: V) -> K? {
+    public mutating func removeKeyForValue(value: V) -> K? {
         let result = reverseMap.removeValueForKey(value)
         if let key = result {
             forwardMap.removeValueForKey(key)
@@ -41,22 +41,22 @@ struct BiMap<K: Hashable, V: Hashable>: Sequence, Equatable  {
     }
     
     
-    subscript (i: K) -> V? {
+    public subscript (i: K) -> V? {
         get {
             return forwardMap[i]
         }
     }
     
-    func keyFor(value: V) -> K? {
+    public func keyFor(value: V) -> K? {
         return reverseMap[value]
     }
     
-    func generate() -> DictionaryGenerator<K,V> {
+    public func generate() -> DictionaryGenerator<K,V> {
         return forwardMap.generate()
     }
     
 
-    func inverse() -> BiMap<V,K> {
+    public func inverse() -> BiMap<V,K> {
         return BiMap<V,K>(forward: self.forwardMap, reverse: self.reverseMap)
     }
 
@@ -64,6 +64,6 @@ struct BiMap<K: Hashable, V: Hashable>: Sequence, Equatable  {
     
 }
 
-func == <K: Hashable,V: Hashable> (lhs: BiMap<K,V>, rhs: BiMap<K,V>) -> Bool {
+public func == <K: Hashable,V: Hashable> (lhs: BiMap<K,V>, rhs: BiMap<K,V>) -> Bool {
     return lhs.forwardMap == rhs.forwardMap
 }
