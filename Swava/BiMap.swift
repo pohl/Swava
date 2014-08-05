@@ -1,7 +1,7 @@
 //  Copyright (c) 2014 Pohl Longsine. All rights reserved.
 
 
-public struct BiMap<K: Hashable, V: Hashable>: Sequence, Equatable  {
+public struct BiMap<K: Hashable, V: Hashable>: SequenceType, Equatable  {
     private var forwardMap: [K:V]
     private var reverseMap: [V:K]
 
